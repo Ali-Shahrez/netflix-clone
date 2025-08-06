@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 
-function Nav() {
-  const [show, setShow] = useState(false); // start transparent
+function Nav({ userName }) {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShow(true); // show black nav
-      } else {
-        setShow(false); // hide black nav
-      }
+      setShow(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
-    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleAvatarClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className={`nav ${show ? "nav_black" : ""}`}>
@@ -25,11 +26,15 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
-      <img
-        className="nav_avatar"
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-        alt="User Avatar"
-      />
+      <div className="nav_avatar_container" onClick={handleAvatarClick}>
+        <img
+          className="nav_avatar"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="User Avatar"
+          title="Back to profile selection"
+        />
+        <span className="nav_username">{userName}</span>
+      </div>
     </div>
   );
 }
