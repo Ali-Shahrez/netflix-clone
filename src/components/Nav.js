@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 function Nav({ userName }) {
   const [show, setShow] = useState(false);
@@ -26,6 +26,16 @@ function Nav({ userName }) {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="Netflix Logo"
       />
+
+      <div className="nav_links">
+        <NavLink to="/landing" className="nav_link">
+          Home
+        </NavLink>
+        <NavLink to="/tv-shows" className="nav_link">
+          TV Shows
+        </NavLink>
+      </div>
+
       <div className="nav_avatar_container" onClick={handleAvatarClick}>
         <img
           className="nav_avatar"

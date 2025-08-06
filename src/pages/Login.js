@@ -2,11 +2,12 @@ import React from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ setUserName }) {
   const navigate = useNavigate();
 
-  const handleProfileClick = (userName) => {
-    navigate("/landing", { state: { userName } });
+  const handleProfileClick = (name) => {
+    setUserName(name);
+    navigate("/landing");
   };
 
   return (

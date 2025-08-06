@@ -1,16 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Landing from "./pages/Landing";
+import TVShows from "./pages/TVShows";
 
 function App() {
+  const [userName, setUserName] = useState("guest");
+
   return (
-    <Router basename="/netflix-clone">
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/landing" element={<Landing />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Login setUserName={setUserName} />} />
+      <Route path="/landing" element={<Landing userName={userName} />} />
+      <Route path="/tv-shows" element={<TVShows userName={userName} />} />
+    </Routes>
   );
 }
 

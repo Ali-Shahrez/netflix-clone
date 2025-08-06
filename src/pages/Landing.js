@@ -4,12 +4,8 @@ import Row from '../components/Row';
 import requests from '../requests'; 
 import Banner from '../components/Banner';
 import Nav from '../components/Nav';
-import { useLocation } from "react-router-dom";
 
-function App() {
-  const location = useLocation();
-  const userName = location.state?.userName || "Guest";
-
+function Landing({ userName }) {
   return (
     <div className="App">
       <Nav userName={userName} />
@@ -26,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default Landing;
