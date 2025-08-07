@@ -22,8 +22,17 @@ const requests = {
     fetchAwardWinners: `/discover/movie?api_key=${API_KEY}&with_keywords=awards`,
     fetchThrillers: `/discover/movie?api_key=${API_KEY}&with_genres=53`,
     fetchRealLife: `/discover/movie?api_key=${API_KEY}&with_keywords=true-story`,
-    fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
     fetchSciFiMovies: `/discover/movie?api_key=${API_KEY}&with_genres=878`,
+
+    // 🎥 DOCUMENTARIES
+    fetchPopularDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&sort_by=popularity.desc`,
+    fetchTopRatedDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&sort_by=vote_average.desc&vote_count.gte=100`,
+    fetchNatureDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&with_keywords=nature`,
+    fetchCrimeDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&with_keywords=crime`,
+    fetchHistoricalDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&with_keywords=history`,
+    fetchPakistaniDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&region=PK&with_original_language=ur`,
+    fetchRecentDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99&primary_release_date.gte=2024-01-01&sort_by=release_date.desc`,
+
 };
 
 export default requests;
