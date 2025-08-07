@@ -2,14 +2,14 @@ import React from "react";
 import './Landing.css'; // reuse same styling
 import Row from '../components/Row';
 import requests from '../requests'; 
-import TVBanner from '../components/TVBanner';
+import Banner from '../components/Banner';
 import Nav from '../components/Nav';
 
-function TVShows({ userName }) {
+function Movies({ userName }) {
   return (
     <div className="App">
       <Nav userName={userName} />
-      <TVBanner />
+      <Banner />
       <Row title='Only on Netflix' fetchURL={requests.fetchNetflixOriginals} isLargeRow />
       <Row title='Award-Winning TV Shows' fetchURL={requests.fetchAwardWinningTV} />
       <Row title='Critically Acclaimed TV Shows' fetchURL={requests.fetchTopRatedTV} />
@@ -21,4 +21,4 @@ function TVShows({ userName }) {
   );
 }
 
-export default TVShows;
+export default Movies;
