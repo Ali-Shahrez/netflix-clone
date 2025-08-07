@@ -34,6 +34,9 @@ function Nav({ userName }) {
         <NavLink to="/tv-shows" className="nav_link">
           TV Shows
         </NavLink>
+        <NavLink to="/movies" className="nav_link">
+          Movies
+        </NavLink>
       </div>
 
       <div className="nav_avatar_container" onClick={handleAvatarClick}>
