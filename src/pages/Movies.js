@@ -10,13 +10,13 @@ function Movies({ userName }) {
     <div className="App">
       <Nav userName={userName} />
       <Banner />
-      <Row title='Only on Netflix' fetchURL={requests.fetchNetflixOriginals} isLargeRow />
-      <Row title='Award-Winning TV Shows' fetchURL={requests.fetchAwardWinningTV} />
-      <Row title='Critically Acclaimed TV Shows' fetchURL={requests.fetchTopRatedTV} />
-      <Row title='US TV Dramas' fetchURL={requests.fetchUSTV} />
-      <Row title='International TV Dramas' fetchURL={requests.fetchInternationalTV} />
-      <Row title='K-Dramas' fetchURL={requests.fetchKDrama} />
-      <Row title='Award-Winning Suspenseful TV Shows' fetchURL={requests.fetchSuspenseTV} />
+      <Row title="Top 10 Movies in Pakistan Today" fetchURL={requests.fetchTop10Movies} isLargeRow />
+      <Row title="Hindi-Language Movies" fetchURL={requests.fetchHindiMovies} />
+      <Row title="Award-Winning Movies" fetchURL={requests.fetchAwardWinners} />
+      <Row title="Thriller Movies" fetchURL={requests.fetchThrillers} />
+      <Row title="Movies Based on Real Life" fetchURL={requests.fetchRealLife} />
+      <Row title="Horror Movies" fetchURL={requests.fetchHorrorMovies} />
+      <Row title="Sci-Fi Movies" fetchURL={requests.fetchSciFiMovies} />
     </div>
   );
 }

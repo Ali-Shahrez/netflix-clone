@@ -16,6 +16,14 @@ const requests = {
     fetchInternationalTV: `/discover/tv?api_key=${API_KEY}&with_original_language=ko|ja|es|fr`,
     fetchKDrama: `/discover/tv?api_key=${API_KEY}&with_original_language=ko`,
     fetchSuspenseTV: `/discover/tv?api_key=${API_KEY}&with_genres=9648&vote_average.gte=7`, // Suspenseful & rated
+
+    fetchTop10Movies: `/trending/movie/day?api_key=${API_KEY}&region=PK`,
+    fetchHindiMovies: `/discover/movie?api_key=${API_KEY}&with_original_language=hi`,
+    fetchAwardWinners: `/discover/movie?api_key=${API_KEY}&with_keywords=awards`,
+    fetchThrillers: `/discover/movie?api_key=${API_KEY}&with_genres=53`,
+    fetchRealLife: `/discover/movie?api_key=${API_KEY}&with_keywords=true-story`,
+    fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+    fetchSciFiMovies: `/discover/movie?api_key=${API_KEY}&with_genres=878`,
 };
 
 export default requests;
